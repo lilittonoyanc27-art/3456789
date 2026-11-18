@@ -1,0 +1,6 @@
+{
+  "name": "Castellano 1.º ESO — Հայերեն-Իսպաներեն",
+  "description": "Интерактивное учебное приложение по испанскому языку и литературе (1.º ESO) с переводом на армянский по клику, разбором вопросов, руководством и пробным экзаменом.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

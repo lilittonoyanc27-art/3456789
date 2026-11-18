@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Lora', 'Noto Sans Armenian', Georgia, serif;
+    --font-sans: 'DM Sans', 'Noto Sans Armenian', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FFF7E6;
+    color: #140B04;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: 0.004em;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Clickable Spanish text blocks */
+.es-clickable {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.es-clickable:hover {
+  background-color: rgba(249, 115, 22, 0.12);
+}
+
+.es-clickable:focus-visible {
+  outline: 2px solid #EA580C;
+  outline-offset: 2px;
+}
+
+.es-clickable.is-open {
+  background-color: rgba(245, 158, 11, 0.16);
+}
+
+/* Armenian translation reveal panel */
+.hy-reveal {
+  margin-top: 0.625rem;
+  padding: 0.875rem 1.05rem;
+  background-color: #FFF0B8;
+  border: 1px solid #F59E0B;
+  border-radius: 0.5rem;
+  color: #140B04;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.005em;
+  animation: hyFadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Answer reveal panel */
+.answer-panel {
+  margin-top: 0.875rem;
+  padding: 1rem 1.125rem;
+  background-color: #FFE8CC;
+  border: 1px solid #F97316;
+  border-radius: 0.625rem;
+  animation: hyFadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hint-panel {
+  margin-top: 0.625rem;
+  padding: 0.75rem 1rem;
+  background-color: #FEF08A;
+  border: 1px solid #EAB308;
+  border-radius: 0.5rem;
+  animation: hyFadeIn 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Highlighted figurative expressions inside reading texts */
+.expr-highlight {
+  background-color: rgba(249, 115, 22, 0.24);
+  border-bottom: 2px solid #EA580C;
+  padding: 0.05rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: #7C2D12;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hy-reveal,
+  .answer-panel,
+  .hint-panel {
+    animation: none;
+  }
+  .es-clickable {
+    transition: none;
+  }
+}
